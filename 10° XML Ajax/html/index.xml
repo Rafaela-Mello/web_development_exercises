@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PACIENTES>
+  <PACIENTE>
+    <NOME>Rafaela Mello</NOME>
+    <PESO>59.0</PESO>
+    <ALTURA>1.65</ALTURA>
+    <GORDURA>22.5</GORDURA>
+  </PACIENTE>
+  <PACIENTE>
+    <NOME>Felipe da Silva</NOME>
+    <PESO>61.0</PESO>
+    <ALTURA>1.74</ALTURA>
+    <GORDURA>18.0</GORDURA>
+  </PACIENTE>
+</PACIENTES>

@@ -1,0 +1,84 @@
+body {
+    background-color: #f0f0f5;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #4b1e8d;
+}
+
+h1 {
+    background-color: #b3bff1;
+    color: white;
+    padding: 10px;
+    margin: 0;
+}
+
+form {
+    width: 50%;
+    margin: 30px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #b3bff1;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.form-row input, .form-row select {
+    flex-grow: 1;
+    
+}
+
+label {
+    display: inline-block;
+    width: 120px;
+    text-align: right;
+    margin-right: 10px;
+    color: #b3bff1;
+}
+
+select, input[type="number"], input[type="text"], input[type="email"], input[type="date"] {
+    width: calc(80% - 130px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    background-color: #b3bff1;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: #9c4dcc;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 10px;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Conversor de Moedas</title>
+    <link href="../css/index.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1>Conversor de Moedas</h1>
+
+    <form id="currency-form">
+        <fieldset>
+            <legend>Conversor de Moedas</legend>
+
+            <div>
+                <label for="from-currency">De: </label>
+                <select id="from-currency" required>
+                    <option value="">Selecione</option>
+                    <option value="real">Real (R$)</option>
+                    <option value="dolar">Dólar (US$)</option>
+                    <option value="euro">Euro (€)</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="to-currency">Para: </label>
+                <select id="to-currency" required>
+                    <option value="">Selecione</option>
+                    <option value="real">Real (R$)</option>
+                    <option value="dolar">Dólar (US$)</option>
+                    <option value="euro">Euro (€)</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label for="amount">Quantia: </label>
+                <input type="number" id="amount" placeholder="Digite o valor" required>
+                <button type="submit">Calcular</button>
+            </div>
+
+            <div class="form-row">
+                <label for="result">Resultado: </label>
+                <input type="text" id="result" disabled>
+            </div>
+
+            <p id="error-message" class="error"></p>
+        </fieldset>
+    </form>
+
+    <script>
+        const form = document.getElementById('currency-form');
+        const result = document.getElementById('result');
+        const errorMessage = document.getElementById('error-message');
+        
+        const exchangeRates = {
+            real: 1,
+            dolar: 5.00,
+            euro: 5.50
+        };
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const fromCurrency = document.getElementById('from-currency').value;
+            const toCurrency = document.getElementById('to-currency').value;
+            const amount = parseFloat(document.getElementById('amount').value);
+
+            errorMessage.textContent = '';
+            result.value = '';
+
+            if (!fromCurrency || !toCurrency || isNaN(amount)) {
+                errorMessage.textContent = 'Por favor, preencha todos os campos corretamente.';
+                return;
+            }
+
+            if (fromCurrency === toCurrency) {
+                errorMessage.textContent = 'A moeda de origem e a moeda de destino não podem ser iguais.';
+                return;
+            }
+
+            let conversionResult;
+            if (fromCurrency === 'real') {
+                conversionResult = amount / exchangeRates[toCurrency];
+            } else if (toCurrency === 'real') {
+                conversionResult = amount * exchangeRates[fromCurrency];
+            } else {
+                conversionResult = (amount * exchangeRates[fromCurrency]) / exchangeRates[toCurrency];
+            }
+
+            result.value = `${conversionResult.toFixed(2)} ${toCurrency.charAt(0).toUpperCase() + toCurrency.slice(1)}`;
+        });
+    </script>
+</body>
+</html>

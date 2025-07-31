@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+  <!-- <meta> serve para informar metadados ao navegador -->
+
+  <!-- o texto da página usa a codificação UTF-8, entende caracteres como ç, á, ê... -->
+  <meta charset="UTF-8">
+
+  <!-- usado por mecanismos de busca para mostrar um resumo da página nos resultados -->
+  <meta name="description" content="Página que ensina sobre a tag meta.">
+
+  <!-- faz com que o layout da página se ajuste corretamente em telas pequenas (como celulares) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- viewport é a área visível da página no navegador do usuário -->
+        <!-- width=device-width define que a largura da página deve ser igual à largura da tela do dispositivo -->
+        <!-- initial-scale=1.0 define o nível de zoom inicial quando a página é carregada
+                                                        1.0 significa sem zoom (100%) -->
+
+  <title>Lista de Tarefas</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Lista de Tarefas</h1>
+    <p>Adicione suas tarefas!</p>
+    <input type="text" id="inputTarefa" placeholder="Digite a sua tarefa">
+    <button onclick="adicionarTarefa()">Adicionar Tarefa</button>
+    <button onclick="limparLista()" class="botao_lista">Limpar Tudo</button>
+    <p id="mensagem"></p>
+    <ul id="listaTarefas"></ul>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

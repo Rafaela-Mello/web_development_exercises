@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Forms</title>
+	<link href="../css/index.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<h1>Formulário - Rafita</h1>
+	<form name="cadastro">
+		<fieldset>
+			<legend>Dados Pessoais</legend>
+			<div class="campo">
+				<label for="nome">Nome</label>
+				<input type="text" id="nome" name="nome" value="" required>
+			</div>
+
+			<div class="campo">
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email" value="" >
+			</div>
+
+			<div class="campo">
+				<label for="data_nascimento">Data de Nascimento</label>
+				<input type="date" id="data_nascimento" name="data_nascimento" value="">
+			</div>
+
+			<div class="campo">
+				<label for="idade">Idade</label>
+				<input type="number" id="idade" name="idade" value="" min="0" max="120">
+			</div>
+
+			<div class="campo" style="display: flex; flex-direction: row;">
+				<label>Sexo</label>
+				<div style="display: flex; flex-direction: column; margin-left: 12px;">
+					<label>
+						Masculino:
+						<input type="radio" name="sexo" value="masculino">
+					</label>
+					<label>
+						Feminino:
+						<input type="radio" name="sexo" value="feminino">
+					</label>
+				</div>
+			</div>
+
+			<div class="campo">
+				<label for="cpf">CPF</label>
+				<input type="text" id="cpf" name="cpf" value="">
+			</div>
+
+			<div class="campo">
+				<label for="telefone">Telefone</label>
+				<input type="tel" id="telefone" name="telefone" value="">
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>Escolaridade</legend>
+			<div class="campo">
+				<label for="escolaridade">Escolaridade</label>
+				<select name="escolaridade" id="escolaridade">
+					<option value="">-</option>
+					<option value="fundamental_completo">Ensino Fundamental Completo</option>
+					<option value="fundamental_incompleto">Ensino Fundamental Incompleto</option>
+					<option value="medio_completo">Ensino Médio Completo</option>
+					<option value="medio_incompleto">Ensino Médio Incompleto</option>
+					<option value="superior_completo">Ensino Superior Completo</option>
+					<option value="superior_incompleto">Ensino Superior Incompleto</option>
+				</select>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>Experiência Profissional</legend>
+			<div class="campo">
+				<label for="cv">Currículo (apenas PDF)</label>
+				<input type="file" id="cv" name="cv" accept=".pdf">
+			</div>
+
+			<div class="campo">
+				<label for="profissao">Profissão</label>
+				<select name="profissao" id="profissao">
+					<option value="">-</option>
+					<option value="estudante">Estudante</option>
+					<option value="medico">Médico</option>
+					<option value="programador">Programador</option>
+					<option value="analista">Analista de Desenvolvimento jr.</option>
+					<option value="pesqueiro">Pesqueiro</option>
+				</select>
+			</div>
+
+			<div class="campo">
+				<label for="experiencia">Experiência</label>
+				<textarea rows="4" id="experiencia" name="experiencia" placeholder="Descreva sua experiência profissional"></textarea>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>Habilidades</legend>
+			<div class="campo">
+				<label for="habilidades">Habilidades</label>
+				<textarea rows="4" id="habilidades" name="habilidades" placeholder="Descreva suas habilidades"></textarea>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>Informações Adicionais</legend>
+			<div class="campo">
+				<label for="cor_preferida">Cor Preferida</label>
+				<input type="color" id="cor_preferida" name="cor_preferida" value="#000000">
+			</div>
+
+			<div class="campo">
+				<label for="pagina_pessoal">Página Pessoal</label>
+				<input type="url" id="pagina_pessoal" name="pagina_pessoal" placeholder="https://www.exemplo.com">
+			</div>
+
+			<div class="campo">
+				<label for="mensagem">Comentários</label>
+				<textarea rows="6" id="mensagem" name="mensagem" placeholder="Digite aqui suas observações"></textarea>
+			</div>
+		</fieldset>
+		
+		<button type="reset" name="reset">Limpar</button>
+		<button type="submit" name="submit" onClick="sayHello()">Enviar</button>
+	</form>
+</body>
+</html>
